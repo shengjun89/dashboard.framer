@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="340px" height="226px" viewBox="0 0 340 226" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>01</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="302.009223" height="183.56732"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="02" transform="translate(-16.000000, 0.000000)">
+            <g id="canvas" transform="translate(16.000000, -1.000000)">
+                <g id="grid" transform="translate(37.312245, 8.911765)" stroke-width="0.5" stroke-linecap="square">
+                    <path d="M-1.42108547e-13,189 L303,189" id="Line-3" stroke="#9E9E9E"></path>
+                    <path d="M1,1 L308.555022,1" id="Line-3-Copy" stroke="#D1D1D1" stroke-dasharray="1,2"></path>
+                    <path d="M1,33 L308.555022,33" id="Line-3-Copy-2" stroke="#D1D1D1" stroke-dasharray="1,2"></path>
+                    <path d="M1,64 L308.555022,64" id="Line-3-Copy-3" stroke="#D1D1D1" stroke-dasharray="1,2"></path>
+                    <path d="M1,96 L308.555022,96" id="Line-3-Copy-4" stroke="#D1D1D1" stroke-dasharray="1,2"></path>
+                    <path d="M1,127 L308.555022,127" id="Line-3-Copy-5" stroke="#D1D1D1" stroke-dasharray="1,2"></path>
+                    <path d="M1,159 L308.555022,159" id="Line-3-Copy-6" stroke="#D1D1D1" stroke-dasharray="1,2"></path>
+                </g>
+                <g id="y" font-family="PingFangSC-Regular, PingFang SC" fill="#9E9E9E" font-weight="normal">
+                    <text id="6000" font-size="9">
+                        <tspan x="0" y="11.862069">6000</tspan>
+                    </text>
+                    <text id="5000" font-size="9">
+                        <tspan x="0" y="42.2512315">5000</tspan>
+                    </text>
+                    <text id="4000" font-size="9">
+                        <tspan x="0" y="73.6206897">4000</tspan>
+                    </text>
+                    <text id="3000" font-size="9">
+                        <tspan x="0" y="104.990148">3000</tspan>
+                    </text>
+                    <text id="2000-copy" font-size="9">
+                        <tspan x="0" y="135.37931">2000</tspan>
+                    </text>
+                    <text id="1000" font-size="9">
+                        <tspan x="0" y="167">1000</tspan>
+                    </text>
+                    <text id="0" font-size="10">
+                        <tspan x="0" y="197.137931">0</tspan>
+                    </text>
+                </g>
+                <g id="x" transform="translate(8.000000, 204.000000)" font-size="9" font-family="PingFangSC-Regular, PingFang SC" fill="#9E9E9E" font-weight="normal">
+                    <text id="12/01">
+                        <tspan x="26.5122356" y="10">12/01</tspan>
+                    </text>
+                    <text id="12/03">
+                        <tspan x="65.6954914" y="10">12/03</tspan>
+                    </text>
+                    <text id="12/05">
+                        <tspan x="105.695491" y="10">12/05</tspan>
+                    </text>
+                    <text id="12/07">
+                        <tspan x="147.172491" y="10">12/07</tspan>
+                    </text>
+                    <text id="12/09">
+                        <tspan x="186.695491" y="10">12/09</tspan>
+                    </text>
+                    <text id="12/11">
+                        <tspan x="231.277491" y="10">12/11</tspan>
+                    </text>
+                    <text id="12/13">
+                        <tspan x="269.486491" y="10">12/13</tspan>
+                    </text>
+                    <text id="12/15">
+                        <tspan x="310.486491" y="10">12/15</tspan>
+                    </text>
+                </g>
+                <g id="line" transform="translate(36.990777, 14.816434)">
+                    <mask id="mask-2" fill="white">
+                        <use xlink:href="#path-1"></use>
+                    </mask>
+                    <g id="Rectangle-5"></g>
+                    <polygon id="Path-2" stroke="#009AE8" stroke-width="2" fill-opacity="0.6" fill="#DFF4FF" mask="url(#mask-2)" points="-2.96797828 165.174697 20.3482649 155.677248 42.0004771 152.176992 63.6526893 119.639153 85.3049015 96.3889613 106.957114 88.3963101 128.609326 78.6543309 150.261538 55.2516029 170.527241 40.2465835 192.040839 42.5800875 216.746777 37.8356916 236.870387 20.3500691 258.522599 11 280.174811 37.8356916 304.827024 55.3513188 305.067429 189.201922 -2.96797828 189.201922"></polygon>
+                    <g id="dots" mask="url(#mask-2)" stroke="#FFFFFF" fill="#009AE8">
+                        <g transform="translate(-1.745330, 7.871504)">
+                            <circle id="Oval-2" cx="22.8860754" cy="147.628092" r="3"></circle>
+                            <circle id="Oval-2-Copy-13" cx="3.32041377" cy="154.365853" r="3"></circle>
+                            <circle id="Oval-2-Copy-10" cx="44.2921678" cy="143.963838" r="3"></circle>
+                            <circle id="Oval-2-Copy-11" cx="65.9762614" cy="111.394155" r="3"></circle>
+                            <circle id="Oval-2-Copy-12" cx="86.3823538" cy="89.1713551" r="3"></circle>
+                            <circle id="Oval-2-Copy-8" cx="304.555283" cy="45.5861818" r="3"></circle>
+                            <circle id="Oval-2-Copy-9" cx="110.788446" cy="79.0961271" r="3"></circle>
+                            <circle id="Oval-2-Copy-15" cx="132.47254" cy="68.4364813" r="3"></circle>
+                            <circle id="Oval-2-Copy-16" cx="151.878632" cy="47.3557862" r="3"></circle>
+                            <circle id="Oval-2-Copy-17" cx="173.562726" cy="31.3663174" r="3"></circle>
+                            <circle id="Oval-2-Copy-18" cx="196.968818" cy="35.4119305" r="3"></circle>
+                            <circle id="Oval-2-Copy-19" opacity="0" cx="221.710925" cy="31.6049141" r="3"></circle>
+                            <circle id="Oval-2-Copy-20" cx="221.586871" cy="29.4676592" r="3"></circle>
+                            <circle id="Oval-2-Copy-22" cx="282.357786" cy="29.559301" r="3"></circle>
+                            <circle id="Oval-2-Copy-23" cx="260.855616" cy="3.19439616" r="3"></circle>
+                            <circle id="Oval-2-Copy-24" cx="240.171009" cy="11.3312355" r="3"></circle>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

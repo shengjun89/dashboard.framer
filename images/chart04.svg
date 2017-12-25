@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="340px" height="226px" viewBox="0 0 340 226" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>01</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="4" transform="translate(-16.000000, 0.000000)">
+            <g id="*chart" transform="translate(16.000000, 6.000000)">
+                <g id="canvas" transform="translate(0.076953, 0.000000)">
+                    <g id="x" transform="translate(6.000000, 197.000000)" font-size="9" font-family="PingFangSC-Regular, PingFang SC" fill="#9E9E9E" font-weight="normal">
+                        <text id="12/01">
+                            <tspan x="26.5122356" y="10">12/01</tspan>
+                        </text>
+                        <text id="12/03">
+                            <tspan x="66.5574186" y="10">12/03</tspan>
+                        </text>
+                        <text id="12/05">
+                            <tspan x="107.608607" y="10">12/05</tspan>
+                        </text>
+                        <text id="12/07">
+                            <tspan x="149.136795" y="10">12/07</tspan>
+                        </text>
+                        <text id="12/09">
+                            <tspan x="189.710984" y="10">12/09</tspan>
+                        </text>
+                        <text id="12/11">
+                            <tspan x="234.344172" y="10">12/11</tspan>
+                        </text>
+                        <text id="12/13">
+                            <tspan x="274.58177" y="10">12/13</tspan>
+                        </text>
+                        <text id="12/15">
+                            <tspan x="315.632958" y="10">12/15</tspan>
+                        </text>
+                    </g>
+                    <g id="y" transform="translate(0.370768, 0.524691)" font-size="9" font-family="PingFangSC-Regular, PingFang SC" fill="#9E9E9E" font-weight="normal">
+                        <text id="100%">
+                            <tspan x="0" y="11">100%</tspan>
+                        </text>
+                        <text id="80%">
+                            <tspan x="0" y="47">80%</tspan>
+                        </text>
+                        <text id="60%">
+                            <tspan x="0" y="84">60%</tspan>
+                        </text>
+                        <text id="40%">
+                            <tspan x="0" y="121">40%</tspan>
+                        </text>
+                        <text id="20%">
+                            <tspan x="0" y="158">20%</tspan>
+                        </text>
+                        <text id="0">
+                            <tspan x="0" y="195">0</tspan>
+                        </text>
+                    </g>
+                    <g id="grid" transform="translate(25.694138, 5.919206)" stroke-width="0.5" stroke-linecap="square">
+                        <path d="M11,188 L314,188" id="Line-3" stroke="#9E9E9E"></path>
+                        <path d="M0.343872516,1.38231117 L311.335493,1.38231117" id="Line-3-Copy-2" stroke="#D1D1D1" stroke-dasharray="2,4"></path>
+                        <path d="M0.343872516,38.3823112 L311.335493,38.3823112" id="Line-3-Copy-3" stroke="#D1D1D1" stroke-dasharray="2,4"></path>
+                        <path d="M0.343872516,74.3823112 L311.335493,74.3823112" id="Line-3-Copy-4" stroke="#D1D1D1" stroke-dasharray="2,4"></path>
+                        <path d="M0.343872516,111.382311 L311.335493,111.382311" id="Line-3-Copy-5" stroke="#D1D1D1" stroke-dasharray="2,4"></path>
+                        <path d="M0.343872516,148.382311 L311.335493,148.382311" id="Line-3-Copy-6" stroke="#D1D1D1" stroke-dasharray="2,4"></path>
+                    </g>
+                    <g id="line" transform="translate(38.884571, 110.000000)">
+                        <polyline id="Path-2" stroke="#1DA7DA" stroke-width="2" points="3.47795963 36 23.9744159 31.2397639 44.4708721 32.7331713 64.9673283 25.9195001 85.4637846 26.292852 105.960241 21.9059677 126.456697 6.72878119 146.953153 8.21235207 167.44961 3.09263874 187.946066 12.8290837 208.442522 11.2359263 228.938978 17.1223798 249.435434 17.5024179 269.931891 22.1393328 290.428347 9"></polyline>
+                        <g id="Group-20" transform="translate(0.000000, 0.000000)" stroke="#FFFFFF" fill="#1DA7DA">
+                            <circle id="Oval-2" cx="3.21597027" cy="34.8545735" r="3"></circle>
+                            <circle id="Oval-2-Copy" cx="23.857441" cy="31.0462878" r="3"></circle>
+                            <circle id="Oval-2-Copy-2" cx="43.7999697" cy="31.5257603" r="3"></circle>
+                            <circle id="Oval-2-Copy-3" cx="64.7396249" cy="25.6831999" r="3"></circle>
+                            <circle id="Oval-2-Copy-4" cx="85.6792801" cy="25.2380021" r="3"></circle>
+                            <circle id="Oval-2-Copy-5" cx="105.621809" cy="21.7995845" r="3"></circle>
+                            <circle id="Oval-2-Copy-15" cx="126.561464" cy="6.79958451" r="3"></circle>
+                            <circle id="Oval-2-Copy-7" cx="146.503993" cy="8.25156253" r="3"></circle>
+                            <circle id="Oval-2-Copy-8" cx="167.443648" cy="3.19966993" r="3"></circle>
+                            <circle id="Oval-2-Copy-9" cx="187.386177" cy="12.9816776" r="3"></circle>
+                            <circle id="Oval-2-Copy-10" cx="208.325832" cy="11.237739" r="3"></circle>
+                            <circle id="Oval-2-Copy-11" cx="228.268361" cy="17.0958847" r="3"></circle>
+                            <circle id="Oval-2-Copy-12" cx="249.208016" cy="17.5318694" r="3"></circle>
+                            <circle id="Oval-2-Copy-13" cx="270.147671" cy="22.0439921" r="3"></circle>
+                            <circle id="Oval-2-Copy-14" cx="290.0902" cy="9.03016856" r="3"></circle>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
