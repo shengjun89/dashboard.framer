@@ -6,35 +6,36 @@
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="3" transform="translate(-16.000000, 0.000000)">
-            <g id="*chart" transform="translate(16.000000, 6.000000)">
-                <g id="canvas" transform="translate(0.077175, 0.000000)">
-                    <g id="x" transform="translate(6.000000, 197.000000)" font-size="9" font-family="PingFangSC-Regular, PingFang SC" fill="#9E9E9E" font-weight="normal">
+            <g id="*chart" transform="translate(16.000000, 0.000000)">
+                <rect id="Rectangle" fill="#FFFFFF" x="1" y="0" width="340" height="226"></rect>
+                <g id="canvas" transform="translate(0.078303, 6.000000)">
+                    <g id="x" transform="translate(6.087719, 197.000000)" font-size="9" font-family="PingFangSC-Regular, PingFang SC" fill="#9E9E9E" font-weight="normal">
                         <text id="12/01">
-                            <tspan x="26.5122356" y="10">12/01</tspan>
+                            <tspan x="26.8706438" y="10">12/01</tspan>
                         </text>
                         <text id="12/03">
-                            <tspan x="65.2220955" y="10">12/03</tspan>
+                            <tspan x="65.5552132" y="10">12/03</tspan>
                         </text>
                         <text id="12/05">
-                            <tspan x="106.222096" y="10">12/05</tspan>
+                            <tspan x="106.555213" y="10">12/05</tspan>
                         </text>
                         <text id="12/07">
-                            <tspan x="147.699096" y="10">12/07</tspan>
+                            <tspan x="148.032213" y="10">12/07</tspan>
                         </text>
                         <text id="12/09">
-                            <tspan x="187.222096" y="10">12/09</tspan>
+                            <tspan x="187.555213" y="10">12/09</tspan>
                         </text>
                         <text id="12/11">
-                            <tspan x="231.804096" y="10">12/11</tspan>
+                            <tspan x="232.137213" y="10">12/11</tspan>
                         </text>
                         <text id="12/13">
-                            <tspan x="271.013096" y="10">12/13</tspan>
+                            <tspan x="271.346213" y="10">12/13</tspan>
                         </text>
                         <text id="12/15">
-                            <tspan x="312.013096" y="10">12/15</tspan>
+                            <tspan x="311.346213" y="10">12/15</tspan>
                         </text>
                     </g>
-                    <g id="y" transform="translate(0.371837, 0.524691)" font-size="9" font-family="PingFangSC-Regular, PingFang SC" fill="#9E9E9E" font-weight="normal">
+                    <g id="y" transform="translate(0.377273, 0.524691)" font-size="9" font-family="PingFangSC-Regular, PingFang SC" fill="#9E9E9E" font-weight="normal">
                         <text id="100%">
                             <tspan x="0" y="11">100%</tspan>
                         </text>
@@ -54,33 +55,33 @@
                             <tspan x="0" y="195">0</tspan>
                         </text>
                     </g>
-                    <g id="grid" transform="translate(25.768184, 5.919206)" stroke-width="0.5" stroke-linecap="square">
-                        <path d="M11,185 L314,185" id="Line-3" stroke="#9E9E9E"></path>
-                        <path d="M0.344863503,1.38231117 L312.232713,1.38231117" id="Line-3-Copy-2" stroke="#D1D1D1" stroke-dasharray="2,4"></path>
-                        <path d="M0.344863503,38.3823112 L312.232713,38.3823112" id="Line-3-Copy-3" stroke="#D1D1D1" stroke-dasharray="2,4"></path>
-                        <path d="M0.344863503,74.3823112 L312.232713,74.3823112" id="Line-3-Copy-4" stroke="#D1D1D1" stroke-dasharray="2,4"></path>
-                        <path d="M0.344863503,111.382311 L312.232713,111.382311" id="Line-3-Copy-5" stroke="#D1D1D1" stroke-dasharray="2,4"></path>
-                        <path d="M0.344863503,148.382311 L312.232713,148.382311" id="Line-3-Copy-6" stroke="#D1D1D1" stroke-dasharray="2,4"></path>
+                    <g id="grid" transform="translate(26.144912, 5.919206)" stroke-width="0.5" stroke-linecap="square">
+                        <path d="M11.1608187,185 L318.590643,185" id="Line-3" stroke="#9E9E9E"></path>
+                        <path d="M0.349905367,1.38231117 L316.797519,1.38231117" id="Line-3-Copy-2" stroke="#D1D1D1" stroke-dasharray="2,4"></path>
+                        <path d="M0.349905367,38.3823112 L316.797519,38.3823112" id="Line-3-Copy-3" stroke="#D1D1D1" stroke-dasharray="2,4"></path>
+                        <path d="M0.349905367,74.3823112 L316.797519,74.3823112" id="Line-3-Copy-4" stroke="#D1D1D1" stroke-dasharray="2,4"></path>
+                        <path d="M0.349905367,111.382311 L316.797519,111.382311" id="Line-3-Copy-5" stroke="#D1D1D1" stroke-dasharray="2,4"></path>
+                        <path d="M0.349905367,148.382311 L316.797519,148.382311" id="Line-3-Copy-6" stroke="#D1D1D1" stroke-dasharray="2,4"></path>
                     </g>
-                    <g id="line" transform="translate(38.996631, 106.000000)">
-                        <polyline id="Path-2" stroke="#1DA7DA" stroke-width="2" points="3.48798257 40 23.2780787 35.2397639 42.6025254 36.7331713 63.0910955 29.9195001 83.1140162 30.292852 102.904112 25.9059677 122.694208 20.7287812 142.484304 20.2123521 165.697957 17.0926387 186.406613 16.8290837 207.089322 15.2359263 225.917999 11.1223798 245.186245 11.5024179 264.644549 8.13933284 291.265316 3"></polyline>
+                    <g id="line" transform="translate(39.566757, 106.000000)">
+                        <polyline id="Path-2" stroke="#1DA7DA" stroke-width="2" points="3.53897646 40 23.6184014 35.2397639 43.2253694 36.7331713 64.0134799 29.9195001 84.3291334 30.292852 104.408558 25.9059677 124.487983 20.7287812 144.567408 20.2123521 168.120442 17.0926387 189.131856 16.8290837 210.116943 15.2359263 229.220894 11.1223798 248.770839 11.5024179 268.513621 8.13933284 295.523581 3"></polyline>
                         <g id="Group-20" transform="translate(0.000000, 0.000000)" stroke="#FFFFFF" fill="#1DA7DA">
-                            <circle id="Oval-2" cx="3.2252382" cy="38.8545735" r="3"></circle>
-                            <circle id="Oval-2-Copy" cx="23.2606781" cy="35.0462878" r="3"></circle>
-                            <circle id="Oval-2-Copy-2" cx="42.8301775" cy="35.5257603" r="3"></circle>
-                            <circle id="Oval-2-Copy-3" cx="62.8656175" cy="29.6831999" r="3"></circle>
-                            <circle id="Oval-2-Copy-4" cx="82.9010574" cy="29.2380021" r="3"></circle>
-                            <circle id="Oval-2-Copy-5" cx="102.936497" cy="25.7995845" r="3"></circle>
-                            <circle id="Oval-2-Copy-15" cx="122.459546" cy="20.7995845" r="3"></circle>
-                            <circle id="Oval-2-Copy-6" opacity="0" cx="122.505997" cy="19.8014884" r="3"></circle>
-                            <circle id="Oval-2-Copy-7" cx="142.541437" cy="20.2515625" r="3"></circle>
-                            <circle id="Oval-2-Copy-8" cx="165.619432" cy="17.1996699" r="3"></circle>
-                            <circle id="Oval-2-Copy-9" cx="186.253874" cy="16.9816776" r="3"></circle>
-                            <circle id="Oval-2-Copy-10" cx="207.159822" cy="15.237739" r="3"></circle>
-                            <circle id="Oval-2-Copy-11" cx="225.622218" cy="11.0958847" r="3"></circle>
-                            <circle id="Oval-2-Copy-12" cx="245.170638" cy="11.5318694" r="3"></circle>
-                            <circle id="Oval-2-Copy-13" cx="266.076586" cy="8.04399212" r="3"></circle>
-                            <circle id="Oval-2-Copy-14" cx="291.055122" cy="3.03016856" r="3"></circle>
+                            <circle id="Oval-2" cx="3.27239081" cy="38.8545735" r="3"></circle>
+                            <circle id="Oval-2-Copy" cx="23.6007465" cy="35.0462878" r="3"></circle>
+                            <circle id="Oval-2-Copy-2" cx="43.4563497" cy="35.5257603" r="3"></circle>
+                            <circle id="Oval-2-Copy-3" cx="63.7847054" cy="29.6831999" r="3"></circle>
+                            <circle id="Oval-2-Copy-4" cx="84.1130611" cy="29.2380021" r="3"></circle>
+                            <circle id="Oval-2-Copy-5" cx="104.441417" cy="25.7995845" r="3"></circle>
+                            <circle id="Oval-2-Copy-15" cx="124.249891" cy="20.7995845" r="3"></circle>
+                            <circle id="Oval-2-Copy-6" opacity="0" cx="124.29702" cy="19.8014884" r="3"></circle>
+                            <circle id="Oval-2-Copy-7" cx="144.625376" cy="20.2515625" r="3"></circle>
+                            <circle id="Oval-2-Copy-8" cx="168.040768" cy="17.1996699" r="3"></circle>
+                            <circle id="Oval-2-Copy-9" cx="188.976884" cy="16.9816776" r="3"></circle>
+                            <circle id="Oval-2-Copy-10" cx="210.188475" cy="15.237739" r="3"></circle>
+                            <circle id="Oval-2-Copy-11" cx="228.920789" cy="11.0958847" r="3"></circle>
+                            <circle id="Oval-2-Copy-12" cx="248.755004" cy="11.5318694" r="3"></circle>
+                            <circle id="Oval-2-Copy-13" cx="269.966595" cy="8.04399212" r="3"></circle>
+                            <circle id="Oval-2-Copy-14" cx="295.310314" cy="3.03016856" r="3"></circle>
                         </g>
                     </g>
                 </g>

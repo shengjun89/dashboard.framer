@@ -6,7 +6,7 @@
   "contentScale" : 1,
   "cachedDeviceWidth" : 0,
   "deviceType" : "fullscreen",
-  "sharedPrototype" : 0,
+  "sharedPrototype" : true,
   "propertyPanelToggleStates" : {
     "Filters" : false
   },
@@ -15,10 +15,15 @@
   "selectedHand" : "",
   "showBezel" : false,
   "foldedCodeRanges" : [
-    "{3837, 1131}",
-    "{4969, 5128}",
-    "{10098, 1983}",
-    "{12082, 1476}"
+    "{0, 583}",
+    "{584, 639}",
+    "{1224, 1799}",
+    "{3027, 1131}",
+    "{4159, 1845}",
+    "{6005, 4636}",
+    "{10642, 1950}",
+    "{12686, 1881}",
+    "{14568, 12436}"
   ],
   "deviceScale" : 1
 }

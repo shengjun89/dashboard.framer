@@ -150,84 +150,6 @@ layer = new TextLayer
 	textAlign: "left"
 	color: "rgba(102,102,102,1)"
 
-#全局函数
-#为数组添加一个方法属性用来去重
-Array.prototype.unique = ->
-	#新建一个数组存放结果
-	res = [];
-	#新建一个空对象
-	json = {};
-	#遍历当前数组并从原数组中取出一个元素与对象进行对比
-	for i in [0..this.length-1]
-	#如果这个元素不重复，则把它存放到结果数组中，同时把这个元素的内容作为对象的一个属性，并赋值为1
-		if!json[this[i]] then res.push(this[i]) and json[this[i]]=1;
-	res;
-
-#创建一个函数把类别字段丢进category数组
-category.pushCgy = ->
-	for i in [0..dataMenu.length-1]
-		category.push(dataMenu[i].cgy)
-category.pushCgy()
-		
-for i in [0..dataMenu.length-1]
-	iconpicArry.push(dataMenu[i].iconpic)
-	iconpicSelArry.push(dataMenu[i].iconpicSel)
-
-# Array.prototype.classify = ->
-# 	res1 = [];
-# 	for i in [0..this.length-1]
-# 	#挑出数组字段
-# 		res1.push(Array[i].cgy)
-# 		return res1
-# 	res2 = []
-# 	for j in [0..res.unique().length-1]
-# 		res2[j] = []
-# 		for k in [0..this.length-1]
-# 			if this[k].cgy == res1.unique()[j] then res2[j].push(this[k])
-
-# 遍历数据类别	
-for j in [0..category.unique().length-1]
-	#按类别数量新建空数组
-	cgyArry[j] = []
-	#遍历数据源
-	for a in [0..dataMenu.length-1]
-	#如果数据源中找到该类别则依次丢到新建的数组
-		if dataMenu[a].cgy == category.unique()[j] then cgyArry[j].push(dataMenu[a])
-	
-
-
-for i in [0..clientdata.length-1]
-	#挑出数组字段
-	clientCgyArry.push(clientdata[i].cgy)
-	clientNameArry.push(clientdata[i].name)
-# 	return clientCgyArry;
-for a in [0..clientCgyArry.unique().length-1]
-	clientdataCgy[a] = []
-	for i in [0..clientdata.length-1]
-		if clientdata[i].cgy == clientCgyArry.unique()[a] then clientdataCgy[a].push(clientdata[i])
-		
-# 	return clientdataCgy		
-
-		
-# 数字滚动函数		
-receiptsStart = 0
-receiptsMax = receiptsStart++
-
-start = [receiptsStart,receiptsStart]
-maxium = [receiptsMax,receiptsMax]
-moneyCount = (i,countLayer) ->
-	if start[i] < maxium[i]
-		Utils.delay receiptsStart*0.000000001, ->
-			showNumber = Utils.round(start[i],0)
-			countLayer.text = showNumber.toFixed(0)
-			start[i] = start[i]+maxium[i]/80
-			moneyCount(i,countLayer)
-	else 
-		maxium[i]+=2000
-		
-
-
-
 #侧边栏(平台筛选)
 selectSound= new Audio("sounds/Tab1.m4a")
 selectEndSound = new Audio("sounds/Tab1.m4a")
@@ -452,9 +374,94 @@ for i in [0..secondaryItemArry.length-1]
 	secondaryItemArry[i].index = i
 	secondaryItemArry[i].onClick (event, layer) ->
 		client_text.text = 	@children[0].text
+
+#WEB菜单交互
+
+changetoWeb = ->
+	dataMenu = dataMenuH5
+changetoAPP = ->
+	dataMenu != dataMenuH5
+changetoWeb()
+
+#全局函数
+#为数组添加一个方法属性用来去重
+Array.prototype.unique = ->
+	#新建一个数组存放结果
+	res = [];
+	#新建一个空对象
+	json = {};
+	#遍历当前数组并从原数组中取出一个元素与对象进行对比
+	for i in [0..this.length-1]
+	#如果这个元素不重复，则把它存放到结果数组中，同时把这个元素的内容作为对象的一个属性，并赋值为1
+		if!json[this[i]] then res.push(this[i]) and json[this[i]]=1;
+	res;
+
+#创建一个函数把类别字段丢进category数组
+category.pushCgy = ->
+	for i in [0..dataMenu.length-1]
+		category.push(dataMenu[i].cgy)
+category.pushCgy()
 		
+for i in [0..dataMenu.length-1]
+	iconpicArry.push(dataMenu[i].iconpic)
+	iconpicSelArry.push(dataMenu[i].iconpicSel)
+
+# Array.prototype.classify = ->
+# 	res1 = [];
+# 	for i in [0..this.length-1]
+# 	#挑出数组字段
+# 		res1.push(Array[i].cgy)
+# 		return res1
+# 	res2 = []
+# 	for j in [0..res.unique().length-1]
+# 		res2[j] = []
+# 		for k in [0..this.length-1]
+# 			if this[k].cgy == res1.unique()[j] then res2[j].push(this[k])
+
+# 遍历数据类别	
+for j in [0..category.unique().length-1]
+	#按类别数量新建空数组
+	cgyArry[j] = []
+	#遍历数据源
+	for a in [0..dataMenu.length-1]
+	#如果数据源中找到该类别则依次丢到新建的数组
+		if dataMenu[a].cgy == category.unique()[j] then cgyArry[j].push(dataMenu[a])
+	
+
+
+for i in [0..clientdata.length-1]
+	#挑出数组字段
+	clientCgyArry.push(clientdata[i].cgy)
+	clientNameArry.push(clientdata[i].name)
+# 	return clientCgyArry;
+for a in [0..clientCgyArry.unique().length-1]
+	clientdataCgy[a] = []
+	for i in [0..clientdata.length-1]
+		if clientdata[i].cgy == clientCgyArry.unique()[a] then clientdataCgy[a].push(clientdata[i])
 		
-# print clientdataCgy		
+# 	return clientdataCgy		
+
+		
+# 数字滚动函数		
+receiptsStart = 0
+receiptsMax = receiptsStart++
+
+start = [receiptsStart,receiptsStart]
+maxium = [receiptsMax,receiptsMax]
+moneyCount = (i,countLayer) ->
+	if start[i] < maxium[i]
+		Utils.delay receiptsStart*0.000000001, ->
+			showNumber = Utils.round(start[i],0)
+			countLayer.text = showNumber.toFixed(0)
+			start[i] = start[i]+maxium[i]/80
+			moneyCount(i,countLayer)
+	else 
+		maxium[i]+=2000
+		
+
+
+
+
 
 #侧边栏(菜单导航)布局
 # print category.unique()
@@ -542,8 +549,6 @@ for j in [0..category.unique().length-1]
 		#抽出单个list图层，丢进前面新建的listArry数组
 		listArry.push(list)	
 
-# print cgyArry
-
 #重置title和其子元素的位置
 for j in [1..category.unique().length-1]
 	arrtitles[j].y = arrtitles[j-1].y+list.height*cgyArry[j-1].length+arrtitles[j].height
@@ -554,14 +559,6 @@ for i in [0..dataMenu.length-1]
 	
 listArry[i-1].shadowY = 1
 listArry[i-1].shadowColor= "rgba(255,255,255,0.1)"
-
-#WEB菜单交互
-
-changetoWeb = ->
-	dataMenu = dataMenuH5
-changetoAPP = ->
-	dataMenu != dataMenuH5
-
 
 #侧边栏导航菜单交互
 
@@ -722,17 +719,16 @@ for b in [0..listArry.length-1]
 	content.placeBehind(topBar)
 	
 	
-	loadingImg = new Layer
+	loadingImg = new TextLayer
 		parent: content
 		width: 96
-		height: 96
+		height: 32
 		x: Align.center
-		y: Align.center(20)
+		y: Align.center
 		fontSize: 12
-		scale: 0.6
-# 		text: "comming soon..."
+		text: "comming soon..."
 # 		backgroundColor: "#CCC"
-		image: "images/loading.gif"
+# 		image: "images/loading.gif"
 		z: 0	
 	
 	pageName = new TextLayer
@@ -801,16 +797,16 @@ for i  in [0..OverviewData.length-1]
 		image: OverviewData[i].chart
 	
 	loadingImg = new TextLayer
-		parent:uV
+		parent: uV
 		width: 96
-		height: 96
-		fontSize: 12
+		height: 32
 		x: Align.center
-		y: Align.center(50)
-		text: "loading..."
+		y: Align.center(44)
+		fontSize: 12
+		text: "comming soon..."
 # 		backgroundColor: "#CCC"
 # 		image: "images/loading.gif"
-		z: 0	
+		z: 0
 	loadingImg.placeBehind(viewChart)
 	
 	totalDataGroup = new Layer
@@ -1053,7 +1049,7 @@ contentArry[0].children[0].visible = false
 # 		arrow_down.stateSwitch("onClickBack") and client.isOn = false
 
 
-#点击详情切换导航
+
 #view1_detail1
 contentArry[0].children[2].children[0].onClick (event, layer) ->
 	menuClickSound.play()
@@ -1154,6 +1150,9 @@ contentArry[0].children[5].children[0].onClick (event, layer) ->
 	if listArry[5].isOn is false then contentArry[5].visible = false		
 
 
+
+changetoWeb()
 # for i in [0..clientdataCgy[1].length-1]
 # 	list_bg.children[1].children[i].onClick (event, layer) ->
 # 		changetoWeb()
+	

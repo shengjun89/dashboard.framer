@@ -150,6 +150,8 @@ layer = new TextLayer
 	textAlign: "left"
 	color: "rgba(102,102,102,1)"
 
+
+
 #全局函数
 #为数组添加一个方法属性用来去重
 Array.prototype.unique = ->
@@ -555,14 +557,6 @@ for i in [0..dataMenu.length-1]
 listArry[i-1].shadowY = 1
 listArry[i-1].shadowColor= "rgba(255,255,255,0.1)"
 
-#WEB菜单交互
-
-changetoWeb = ->
-	dataMenu = dataMenuH5
-changetoAPP = ->
-	dataMenu != dataMenuH5
-
-
 #侧边栏导航菜单交互
 
 menuClickSound = new Audio("sounds/Tab2.m4a")
@@ -722,17 +716,16 @@ for b in [0..listArry.length-1]
 	content.placeBehind(topBar)
 	
 	
-	loadingImg = new Layer
+	loadingImg = new TextLayer
 		parent: content
 		width: 96
-		height: 96
+		height: 32
 		x: Align.center
-		y: Align.center(20)
+		y: Align.center
 		fontSize: 12
-		scale: 0.6
-# 		text: "comming soon..."
+		text: "comming soon..."
 # 		backgroundColor: "#CCC"
-		image: "images/loading.gif"
+# 		image: "images/loading.gif"
 		z: 0	
 	
 	pageName = new TextLayer
@@ -801,16 +794,16 @@ for i  in [0..OverviewData.length-1]
 		image: OverviewData[i].chart
 	
 	loadingImg = new TextLayer
-		parent:uV
+		parent: uV
 		width: 96
-		height: 96
-		fontSize: 12
+		height: 32
 		x: Align.center
-		y: Align.center(50)
-		text: "loading..."
+		y: Align.center(44)
+		fontSize: 12
+		text: "comming soon..."
 # 		backgroundColor: "#CCC"
 # 		image: "images/loading.gif"
-		z: 0	
+		z: 0
 	loadingImg.placeBehind(viewChart)
 	
 	totalDataGroup = new Layer
@@ -1053,7 +1046,7 @@ contentArry[0].children[0].visible = false
 # 		arrow_down.stateSwitch("onClickBack") and client.isOn = false
 
 
-#点击详情切换导航
+
 #view1_detail1
 contentArry[0].children[2].children[0].onClick (event, layer) ->
 	menuClickSound.play()
@@ -1157,3 +1150,4 @@ contentArry[0].children[5].children[0].onClick (event, layer) ->
 # for i in [0..clientdataCgy[1].length-1]
 # 	list_bg.children[1].children[i].onClick (event, layer) ->
 # 		changetoWeb()
+	

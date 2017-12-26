@@ -727,9 +727,8 @@ for b in [0..listArry.length-1]
 		width: 96
 		height: 96
 		x: Align.center
-		y: Align.center(20)
+		y: Align.center
 		fontSize: 12
-		scale: 0.6
 # 		text: "comming soon..."
 # 		backgroundColor: "#CCC"
 		image: "images/loading.gif"

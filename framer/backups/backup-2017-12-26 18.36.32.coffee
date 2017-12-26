@@ -60,7 +60,7 @@ loose = "spring(240,18,28)"
 #侧边栏菜单
 dataMenu = [{cgy:"概览",name:"概览",iconpic:"images/01_nor.svg",iconpicSel:"images/01_sel.svg";},{cgy:"用户分析",name:"新增用户",iconpic:"images/02_nor.svg",iconpicSel:"images/02_sel.svg";},{cgy:"用户分析",name:"活跃用户",iconpic:"images/03_nor.svg",iconpicSel:"images/03_sel.svg";},{cgy:"用户分析",name:"版本统计",iconpic:"images/04_nor.svg",iconpicSel:"images/04_sel.svg";},{cgy:"转化分析",name:"UV访购率",iconpic:"images/05_nor.svg",iconpicSel:"images/05_sel.svg";},{cgy:"转化分析",name:"注册UV转化率",iconpic:"images/06_nor.svg",iconpicSel:"images/06_sel.svg";},{cgy:"功能",name:"页面流量",iconpic:"images/07_nor.svg",iconpicSel:"images/07_sel.svg";},{cgy:"功能",name:"功能点击",iconpic:"images/08_nor.svg",iconpicSel:"images/08_sel.svg";}]
 
-dataMenuH5 = [{cgy:"概览",name:"概览",iconpic:"images/01_nor.svg",iconpicSel:"images/01_sel.svg";},{cgy:"转化分析",name:"注册UV转化率",iconpic:"images/06_nor.svg",iconpicSel:"images/06_sel.svg";},{cgy:"功能",name:"页面流量",iconpic:"images/07_nor.svg",iconpicSel:"images/07_sel.svg";},{cgy:"功能",name:"功能点击",iconpic:"images/08_nor.svg",iconpicSel:"images/08_sel.svg";}]
+dataMenuH5 = [{cgy:"概览",name:"概览",iconpic:"images/01_nor.svg",iconpicSel:"images/01_sel.svg";},{},{},{},{cgy:"转化分析",name:"UV访购率",iconpic:"images/05_nor.svg",iconpicSel:"images/05_sel.svg";},{cgy:"转化分析",name:"注册UV转化率",iconpic:"images/06_nor.svg",iconpicSel:"images/06_sel.svg";},{cgy:"功能",name:"页面流量",iconpic:"images/07_nor.svg",iconpicSel:"images/07_sel.svg";},{cgy:"功能",name:"功能点击",iconpic:"images/08_nor.svg",iconpicSel:"images/08_sel.svg";}]
 
 #平台下拉选项数据
 clientdata = [{cgy:"APP",name:"appitem01"},{cgy:"APP",name:"appitem02"},{cgy:"APP",name:"appitem03"},{cgy:"WEB",name:"webitem01"},{cgy:"WEB",name:"webitem02"},{cgy:"APP",name:"appitem04"},{cgy:"APP",name:"appitem05"},
@@ -456,7 +456,16 @@ for i in [0..secondaryItemArry.length-1]
 		
 # print clientdataCgy		
 
+#WEB菜单交互
+
+changetoWeb = ->
+	dataMenu = dataMenuH5
+changetoAPP = ->
+	dataMenu != dataMenuH5
+changetoWeb()
+
 #侧边栏(菜单导航)布局
+cgyArry = []
 # print category.unique()
 for j in [0..category.unique().length-1]
 	title = new Layer
@@ -499,7 +508,6 @@ for j in [0..category.unique().length-1]
 	for a in [0..dataMenu.length-1]
 	#如果数据源中找到该类别则依次丢到新建的数组
 		if dataMenu[a].cgy == category.unique()[j] then cgyArry[j].push(dataMenu[a])
-
 
 	for k in [0..cgyArry[j].length-1]
 		list = new Layer
@@ -552,16 +560,8 @@ for j in [1..category.unique().length-1]
 for i in [0..dataMenu.length-1]
 	category.push(dataMenu[i].cgy)
 	
-listArry[i-1].shadowY = 1
-listArry[i-1].shadowColor= "rgba(255,255,255,0.1)"
-
-#WEB菜单交互
-
-changetoWeb = ->
-	dataMenu = dataMenuH5
-changetoAPP = ->
-	dataMenu != dataMenuH5
-
+# listArry[i-1].shadowY = 1
+# listArry[i-1].shadowColor= "rgba(255,255,255,0.1)"
 
 #侧边栏导航菜单交互
 
@@ -722,17 +722,16 @@ for b in [0..listArry.length-1]
 	content.placeBehind(topBar)
 	
 	
-	loadingImg = new Layer
+	loadingImg = new TextLayer
 		parent: content
 		width: 96
-		height: 96
+		height: 32
 		x: Align.center
-		y: Align.center(20)
+		y: Align.center
 		fontSize: 12
-		scale: 0.6
-# 		text: "comming soon..."
+		text: "comming soon..."
 # 		backgroundColor: "#CCC"
-		image: "images/loading.gif"
+# 		image: "images/loading.gif"
 		z: 0	
 	
 	pageName = new TextLayer
@@ -801,16 +800,16 @@ for i  in [0..OverviewData.length-1]
 		image: OverviewData[i].chart
 	
 	loadingImg = new TextLayer
-		parent:uV
+		parent: uV
 		width: 96
-		height: 96
-		fontSize: 12
+		height: 32
 		x: Align.center
-		y: Align.center(50)
-		text: "loading..."
+		y: Align.center(44)
+		fontSize: 12
+		text: "comming soon..."
 # 		backgroundColor: "#CCC"
 # 		image: "images/loading.gif"
-		z: 0	
+		z: 0
 	loadingImg.placeBehind(viewChart)
 	
 	totalDataGroup = new Layer
@@ -1053,7 +1052,7 @@ contentArry[0].children[0].visible = false
 # 		arrow_down.stateSwitch("onClickBack") and client.isOn = false
 
 
-#点击详情切换导航
+
 #view1_detail1
 contentArry[0].children[2].children[0].onClick (event, layer) ->
 	menuClickSound.play()
@@ -1157,3 +1156,4 @@ contentArry[0].children[5].children[0].onClick (event, layer) ->
 # for i in [0..clientdataCgy[1].length-1]
 # 	list_bg.children[1].children[i].onClick (event, layer) ->
 # 		changetoWeb()
+	

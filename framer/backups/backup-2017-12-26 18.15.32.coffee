@@ -73,6 +73,14 @@ OverviewData  = [{cgy:"用户分析",name:"新增用户(登录用户)",yesData:"
 
 
 # dataMenu.destroy()
+
+#WEB菜单交互
+
+changetoWeb = ->
+	dataMenu = dataMenuH5
+changetoAPP = ->
+	dataMenu != dataMenuH5
+changetoWeb()
 			
 #顶部导航
 topBar = new Layer
@@ -150,7 +158,7 @@ layer = new TextLayer
 	textAlign: "left"
 	color: "rgba(102,102,102,1)"
 
-#全局函数
+#全局函数&平台筛选
 #为数组添加一个方法属性用来去重
 Array.prototype.unique = ->
 	#新建一个数组存放结果
@@ -223,8 +231,7 @@ moneyCount = (i,countLayer) ->
 			start[i] = start[i]+maxium[i]/80
 			moneyCount(i,countLayer)
 	else 
-		maxium[i]+=2000
-		
+		maxium[i]+=2000	
 
 
 
@@ -447,14 +454,16 @@ client.onClick (event, layer) ->
 		arrow_down.stateSwitch("onClickBack") and @isOn = false
 		selectEndSound.play()
 
+
+
 #点击子项目替换平台名称
 for i in [0..secondaryItemArry.length-1]
 	secondaryItemArry[i].index = i
 	secondaryItemArry[i].onClick (event, layer) ->
 		client_text.text = 	@children[0].text
 		
-		
-# print clientdataCgy		
+
+
 
 #侧边栏(菜单导航)布局
 # print category.unique()
@@ -542,8 +551,6 @@ for j in [0..category.unique().length-1]
 		#抽出单个list图层，丢进前面新建的listArry数组
 		listArry.push(list)	
 
-# print cgyArry
-
 #重置title和其子元素的位置
 for j in [1..category.unique().length-1]
 	arrtitles[j].y = arrtitles[j-1].y+list.height*cgyArry[j-1].length+arrtitles[j].height
@@ -554,14 +561,6 @@ for i in [0..dataMenu.length-1]
 	
 listArry[i-1].shadowY = 1
 listArry[i-1].shadowColor= "rgba(255,255,255,0.1)"
-
-#WEB菜单交互
-
-changetoWeb = ->
-	dataMenu = dataMenuH5
-changetoAPP = ->
-	dataMenu != dataMenuH5
-
 
 #侧边栏导航菜单交互
 
@@ -722,17 +721,16 @@ for b in [0..listArry.length-1]
 	content.placeBehind(topBar)
 	
 	
-	loadingImg = new Layer
+	loadingImg = new TextLayer
 		parent: content
 		width: 96
-		height: 96
+		height: 32
 		x: Align.center
-		y: Align.center(20)
+		y: Align.center
 		fontSize: 12
-		scale: 0.6
-# 		text: "comming soon..."
+		text: "comming soon..."
 # 		backgroundColor: "#CCC"
-		image: "images/loading.gif"
+# 		image: "images/loading.gif"
 		z: 0	
 	
 	pageName = new TextLayer
@@ -801,16 +799,16 @@ for i  in [0..OverviewData.length-1]
 		image: OverviewData[i].chart
 	
 	loadingImg = new TextLayer
-		parent:uV
+		parent: uV
 		width: 96
-		height: 96
-		fontSize: 12
+		height: 32
 		x: Align.center
-		y: Align.center(50)
-		text: "loading..."
+		y: Align.center(44)
+		fontSize: 12
+		text: "comming soon..."
 # 		backgroundColor: "#CCC"
 # 		image: "images/loading.gif"
-		z: 0	
+		z: 0
 	loadingImg.placeBehind(viewChart)
 	
 	totalDataGroup = new Layer
@@ -1053,7 +1051,7 @@ contentArry[0].children[0].visible = false
 # 		arrow_down.stateSwitch("onClickBack") and client.isOn = false
 
 
-#点击详情切换导航
+
 #view1_detail1
 contentArry[0].children[2].children[0].onClick (event, layer) ->
 	menuClickSound.play()
@@ -1154,6 +1152,9 @@ contentArry[0].children[5].children[0].onClick (event, layer) ->
 	if listArry[5].isOn is false then contentArry[5].visible = false		
 
 
+
+changetoWeb()
 # for i in [0..clientdataCgy[1].length-1]
 # 	list_bg.children[1].children[i].onClick (event, layer) ->
 # 		changetoWeb()
+	

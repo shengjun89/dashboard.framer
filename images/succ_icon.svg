@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_succ</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Components/Feedback/Message/消息提示Message-浮出主动消失型消息提醒-绿色icon-Copy-2" transform="translate(-17.000000, -10.000000)">
+            <g id="消息提示Message-浮出主动消失型消息提醒-绿色icon">
+                <g id="Group" transform="translate(17.000000, 10.000000)">
+                    <g id="icon_succ">
+                        <path d="M7.00340587,0 C3.13543521,0 0,3.13160684 0,6.9948547 C0,10.8581026 3.13543521,13.9897094 7.00340587,13.9897094 C10.8713765,13.9897094 14.0068117,10.8581026 14.0068117,6.9948547 C14.0068117,3.13160684 10.8713765,0 7.00340587,0 L7.00340587,0 Z M11.2369511,5.14049573 L5.54930562,10.6694017 C5.37815648,10.8403419 5.1002445,10.8403419 4.92909535,10.6694017 L2.7561687,8.59488889 C2.58501956,8.42394872 2.58501956,8.14630769 2.7561687,7.97536752 C2.92731785,7.80442735 3.20529829,7.80442735 3.37644743,7.97536752 L5.2399022,9.7408547 L10.6167237,4.52102564 C10.7878729,4.35008547 11.065802,4.35008547 11.2369511,4.52102564 C11.4081002,4.69196581 11.4081002,4.96955556 11.2369511,5.14049573 L11.2369511,5.14049573 Z" id="iconfont-checkcircle" fill="#000000"></path>
+                        <g id="color/success" style="mix-blend-mode: screen;">
+                            <g id="success" transform="translate(0.000000, -10.000000)">
+                                <rect id="Rectangle-3" fill="#52C41A" x="0" y="10" width="14" height="33"></rect>
+                                <text font-family="PingFangSC-Medium, PingFang SC" font-size="24" font-weight="400"></text>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

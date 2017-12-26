@@ -727,9 +727,8 @@ for b in [0..listArry.length-1]
 		width: 96
 		height: 96
 		x: Align.center
-		y: Align.center(20)
+		y: Align.center
 		fontSize: 12
-		scale: 0.6
 # 		text: "comming soon..."
 # 		backgroundColor: "#CCC"
 		image: "images/loading.gif"
@@ -801,16 +800,16 @@ for i  in [0..OverviewData.length-1]
 		image: OverviewData[i].chart
 	
 	loadingImg = new TextLayer
-		parent:uV
+		parent: uV
 		width: 96
-		height: 96
-		fontSize: 12
+		height: 32
 		x: Align.center
-		y: Align.center(50)
-		text: "loading..."
+		y: Align.center(44)
+		fontSize: 12
+		text: "comming soon..."
 # 		backgroundColor: "#CCC"
 # 		image: "images/loading.gif"
-		z: 0	
+		z: 0
 	loadingImg.placeBehind(viewChart)
 	
 	totalDataGroup = new Layer

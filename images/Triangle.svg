@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="7px" height="4px" viewBox="0 0 7 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Triangle</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" fill-opacity="0.85">
+        <g id="Components/Feedback/Popconfirm/气泡提示框-Tooltips-基本样式-Copy" transform="translate(-59.000000, -34.000000)" fill="#333840">
+            <g id="Tooltips">
+                <g id="Triangle">
+                    <polygon points="62.5 34 66 38 59 38"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
