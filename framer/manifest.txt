@@ -51,6 +51,7 @@ images/descend.svg
 images/icon_succ.svg
 images/info_icon.svg
 images/loading.gif
+images/login_bg.jpg
 images/login_bg.svg
 images/login_logo.png
 images/logo.svg
@@ -59,9 +60,14 @@ images/succ_icon.svg
 images/Triangle.svg
 images.zip
 index.html
+modules/DynamicLoader.coffee
 modules/myModule.coffee
 sounds/Button2.m4a
 sounds/Collapse.m4a
 sounds/Success3.m4a
 sounds/Tab1.m4a
 sounds/Tab2.m4a
+vendor/chartist-plugin-fill-donut.js
+vendor/chartist.min.css
+vendor/chartist.min.js
+vendor/custom.css

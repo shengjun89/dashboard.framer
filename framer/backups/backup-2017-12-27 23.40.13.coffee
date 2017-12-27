@@ -1182,10 +1182,8 @@ newDataGroups = []
 days = ["12/01","12/02","12/03","12/04","12/05","12/06","12/07","12/08","12/09","12/10","12/11","12/12","12/13","12/14","12/15"] 
 newData1 = ["1256","1650","1988","2445","2566","2790","2664","2812","2913","2873","3160","2905","3045","2912","3123","3212"]
 newData2 = ["2156","3550","5801","4677","3216","4801","3260","5691","5901","4873","6360","8505","9675","8514","6746","9607"]
-newData3 = ["34.1","36.2","38.2","35.1","38.5","37.6","38.6","39.6","38.6","36.2","39.5","40.2","44.6","34.5","40.6","37.6"]
-newData4 = ["24.1","26.2","28.2","25.1","30.5","28.6","31.6","32.6","28.6","26.2","29.5","30.2","24.6","31.5","30.6","37.6"]
-# newData3 = ["42.1%","36.1%","49.1%","46.7%","38.1%","48.5%","42.6%","48.5%","49.5%","48.7%","53.6%","49.2%","54.2%","52.3%","51.2%","57.5%"]
-# newData4 = ["32.1%","31.5%","39.1%","26.7%","18.1%","28.5%","32.6%","38.5%","29.5%","38.7%","23.6%","29.2%","24.2%","32.3%","31.2%","27.5%"]
+newData3 = ["42.1%","36.1%","49.1%","46.7%","38.1%","48.5%","42.6%","48.5%","49.5%","48.7%","53.6%","49.2%","54.2%","52.3%","51.2%","57.5%"]
+newData4 = ["32.1%","31.5%","39.1%","26.7%","18.1%","28.5%","32.6%","38.5%","29.5%","38.7%","23.6%","29.2%","24.2%","32.3%","31.2%","27.5%"]
 
 newDataGroups.push(newData1,newData2,newData3,newData4)
 TrendChartGroup = []
@@ -1194,6 +1192,7 @@ TrendChartGroup = []
 
 #line1
 lineOptions1 = 
+# 		parent: uVarry[i].children[1]
 	height: "#{uVarry[0].children[1].height*0.9}"
 	width: "#{uVarry[0].children[1].width}"
 	showPoint: true
@@ -1210,6 +1209,25 @@ lineOptions1 =
 			"#{value}"
 
 lineOptions2 = 
+# 		parent: uVarry[i].children[1]
+	height: "#{uVarry[1].children[1].height*0.9}"
+	width: "#{uVarry[1].children[1].width}"
+	showPoint: true
+	chartPadding:
+		top: 60 
+		left: 0
+	axisX:
+		showGrid: false
+	axisY:
+		onlyInteger: true
+		offset: 20
+		scaleMinSpace: 50
+		labelInterpolationFnc: (value) ->
+			"#{value}"
+
+
+lineOptions2 = 
+# 		parent: uVarry[i].children[1]
 	height: "#{uVarry[1].children[1].height*0.9}"
 	width: "#{uVarry[1].children[1].width}"
 	showPoint: true
@@ -1226,24 +1244,9 @@ lineOptions2 =
 			"#{value}"
 
 lineOptions3 = 
+# 		parent: uVarry[i].children[1]
 	height: "#{uVarry[2].children[1].height*0.9}"
 	width: "#{uVarry[2].children[1].width}"
-	showPoint: true
-	chartPadding:
-		top: 60 
-		left: 0
-	axisX:
-		showGrid: false
-	axisY:
-		onlyInteger: true
-		offset: 20
-		scaleMinSpace: 50
-		labelInterpolationFnc: (value) ->
-			"#{value}"
-
-lineOptions4 = 
-	height: "#{uVarry[3].children[1].height*0.9}"
-	width: "#{uVarry[3].children[1].width}"
 	showPoint: true
 	chartPadding:
 		top: 60 
@@ -1285,9 +1288,27 @@ TrendChartPlaceholder4 = new Layer
 	width: uVarry[3].children[1].width
 	height: uVarry[3].children[1].height
 	backgroundColor: "#FFF"
-	y: 32			
+	y: 32
+				
 # TrendChartGroup.push()
 #添加标签文字loading
+Utils.labelLayer(TrendChartPlaceholder1, "Loading...")
+TrendChartPlaceholder1.style = "font-size": "0.4em"
+TrendChartPlaceholder1.style = "line-height": "26"
+
+Utils.labelLayer(TrendChartPlaceholder2, "Loading...")
+TrendChartPlaceholder2.style = "font-size": "0.4em"
+TrendChartPlaceholder2.style = "line-height": "26"
+
+Utils.labelLayer(TrendChartPlaceholder3, "Loading...")
+TrendChartPlaceholder3.style = "font-size": "0.4em"
+TrendChartPlaceholder3.style = "line-height": "26"
+
+Utils.labelLayer(TrendChartPlaceholder4, "Loading...")
+TrendChartPlaceholder4.style = "font-size": "0.4em"
+TrendChartPlaceholder4.style = "line-height": "26"
+
+
 
 defGradient = (ctx, name, startColor, endColor)->
 	defs = ctx.svg.elem('defs')
@@ -1300,13 +1321,10 @@ DynamicLoader.series(CHARTIST).then(->
 # 	print 1
 	init = true
 	lastPath = undefined
-	#Draw trend line chart
+	
 	TrendChartPlaceholder1.width = viewChart.width
-# 		for i in [[0..OverviewData.length-1]]
 	TrendChartPlaceholder1.html = '<div id="trend1"></div>'
 	trendChart1 = new Chartist.Line '#trend1',
-#x轴的坐标无法展示？
-# 		{ labels: days, series: [newData] },
 	{ series: [newDataGroups[0]] },
 	lineOptions1
 		
@@ -1315,102 +1333,51 @@ DynamicLoader.series(CHARTIST).then(->
 		ctx.svg.querySelectorAll('.ct-series')
 			.attr 'transform':"translate( #{ctx.axisX.stepLength/2} )"
 		defGradient ctx, 'gradient1', GRADIENT_COLOR1_1, GRADIENT_COLOR1_2
-# 		defGradient ctx, 'gradient2', GRADIENT_COLOR2_1, GRADIENT_COLOR2_2
-# 		defGradient ctx, 'gradient3', GRADIENT_COLOR3_1, GRADIENT_COLOR3_2
-# 			
+	
 	trendChart1.on 'draw', (data)->
-		if data.type is 'label' and data.axis is 'y' or data.type is 'grid'
-			data.element.animate
-				opacity:
-					dur: 500
-					from: 0
-					to: 1
-					easing: Chartist.Svg.Easing.easeOut
-
-		if data.type is 'point'
-			# Dynamic color point 				
-			data.element.attr 
-				style: "stroke: #{Color.mix(GRADIENT_COLOR1_1, GRADIENT_COLOR1_2, Chartist.getMultiValue(data.value) / _.max(data.series))}"
-			# Animate point 			
-			data.element.animate
-				opacity: 
-					dur: 250
-					begin: 800
-					from: 0
-					to: 1
-					easing: Chartist.Svg.Easing.easeOutQuint
-		 					 			
-		if data.type is 'line'
-			# create bounding box for gradient color
-			data.element.attr
-				x1: data.x1 + 0.001
-			# Animate line
-			data.element.animate 
-				d: 
-					dur: 1000
-					from: if lastPath is undefined then data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify() else lastPath
-					to: data.path.clone().stringify()
-					easing: Chartist.Svg.Easing.easeOutQuint
-			# Save previous line path  			
-			if init is true
-				lastPath = data.path.clone().stringify()
-				init = false
-				
-				
+		datajudge = ->
+			if data.type is 'label' and data.axis is 'y' or data.type is 'grid'
+				data.element.animate
+					opacity:
+						dur: 500
+						from: 0
+						to: 1
+						easing: Chartist.Svg.Easing.easeOut
 	
-	TrendChartPlaceholder2.width = viewChart.width
-	TrendChartPlaceholder2.html = '<div id="trend2"></div>'
-	trendChart2 = new Chartist.Line '#trend2',
-	{ series: [newDataGroups[1]] },
-	lineOptions2
-		
-	trendChart2.on 'created', (ctx)->
-		init = true	
-		ctx.svg.querySelectorAll('.ct-series')
-			.attr 'transform':"translate( #{ctx.axisX.stepLength/2} )"
-		defGradient ctx, 'gradient1', GRADIENT_COLOR1_1, GRADIENT_COLOR1_2 			
-	trendChart2.on 'draw', (data)->
-		if data.type is 'label' and data.axis is 'y' or data.type is 'grid'
-			data.element.animate
-				opacity:
-					dur: 500
-					from: 0
-					to: 1
-					easing: Chartist.Svg.Easing.easeOut
+			if data.type is 'point'
+				# Dynamic color point 				
+				data.element.attr 
+					style: "stroke: #{Color.mix(GRADIENT_COLOR1_1, GRADIENT_COLOR1_2, Chartist.getMultiValue(data.value) / _.max(data.series))}"
+				# Animate point 			
+				data.element.animate
+					opacity: 
+						dur: 250
+						begin: 800
+						from: 0
+						to: 1
+						easing: Chartist.Svg.Easing.easeOutQuint
+			 					 			
+			if data.type is 'line'
+				# create bounding box for gradient color
+				data.element.attr
+					x1: data.x1 + 0.001
+				# Animate line
+				data.element.animate 
+					d: 
+						dur: 1000
+						from: if lastPath is undefined then data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify() else lastPath
+						to: data.path.clone().stringify()
+						easing: Chartist.Svg.Easing.easeOutQuint
+				# Save previous line path  			
+				if init is true
+					lastPath = data.path.clone().stringify()
+					init = false
+		datajudge()						
 
-		if data.type is 'point'
-			# Dynamic color point 				
-			data.element.attr 
-				style: "stroke: #{Color.mix(GRADIENT_COLOR1_1, GRADIENT_COLOR1_2, Chartist.getMultiValue(data.value) / _.max(data.series))}"
-			# Animate point 			
-			data.element.animate
-				opacity: 
-					dur: 250
-					begin: 800
-					from: 0
-					to: 1
-					easing: Chartist.Svg.Easing.easeOutQuint
-		 					 			
-		if data.type is 'line'
-			# create bounding box for gradient color
-			data.element.attr
-				x1: data.x1 + 0.001
-			# Animate line
-			data.element.animate 
-				d: 
-					dur: 1000
-					from: if lastPath is undefined then data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify() else lastPath
-					to: data.path.clone().stringify()
-					easing: Chartist.Svg.Easing.easeOutQuint
-			# Save previous line path  			
-			if init is true
-				lastPath = data.path.clone().stringify()
-				init = false
-				
-	
+
 	TrendChartPlaceholder3.width = viewChart.width
-	TrendChartPlaceholder3.html = '<div id="trend3"></div>'
-	trendChart3 = new Chartist.Line '#trend3',
+	TrendChartPlaceholder3.html = '<div id="trend1"></div>'
+	trendChart3 = new Chartist.Line '#trend1',
 	{ series: [newDataGroups[2]] },
 	lineOptions3
 		
@@ -1418,95 +1385,55 @@ DynamicLoader.series(CHARTIST).then(->
 		init = true	
 		ctx.svg.querySelectorAll('.ct-series')
 			.attr 'transform':"translate( #{ctx.axisX.stepLength/2} )"
-		defGradient ctx, 'gradient1', GRADIENT_COLOR1_1, GRADIENT_COLOR1_2 			
-	trendChart3.on 'draw', (data)->
-		if data.type is 'label' and data.axis is 'y' or data.type is 'grid'
-			data.element.animate
-				opacity:
-					dur: 500
-					from: 0
-					to: 1
-					easing: Chartist.Svg.Easing.easeOut
-
-		if data.type is 'point'
-			# Dynamic color point 				
-			data.element.attr 
-				style: "stroke: #{Color.mix(GRADIENT_COLOR1_1, GRADIENT_COLOR1_2, Chartist.getMultiValue(data.value) / _.max(data.series))}"
-			# Animate point 			
-			data.element.animate
-				opacity: 
-					dur: 250
-					begin: 800
-					from: 0
-					to: 1
-					easing: Chartist.Svg.Easing.easeOutQuint
-		 					 			
-		if data.type is 'line'
-			# create bounding box for gradient color
-			data.element.attr
-				x1: data.x1 + 0.001
-			# Animate line
-			data.element.animate 
-				d: 
-					dur: 1000
-					from: if lastPath is undefined then data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify() else lastPath
-					to: data.path.clone().stringify()
-					easing: Chartist.Svg.Easing.easeOutQuint
-			# Save previous line path  			
-			if init is true
-				lastPath = data.path.clone().stringify()
-				init = false			
-		
-		
-	TrendChartPlaceholder4.width = viewChart.width
-	TrendChartPlaceholder4.html = '<div id="trend4"></div>'
-	trendChart4 = new Chartist.Line '#trend4',
-	{ series: [newDataGroups[3]] },
-	lineOptions4
-		
-	trendChart4.on 'created', (ctx)->
-		init = true	
-		ctx.svg.querySelectorAll('.ct-series')
-			.attr 'transform':"translate( #{ctx.axisX.stepLength/2} )"
-		defGradient ctx, 'gradient1', GRADIENT_COLOR1_1, GRADIENT_COLOR1_2 			
-	trendChart4.on 'draw', (data)->
-		if data.type is 'label' and data.axis is 'y' or data.type is 'grid'
-			data.element.animate
-				opacity:
-					dur: 500
-					from: 0
-					to: 1
-					easing: Chartist.Svg.Easing.easeOut
-
-		if data.type is 'point'
-			# Dynamic color point 				
-			data.element.attr 
-				style: "stroke: #{Color.mix(GRADIENT_COLOR1_1, GRADIENT_COLOR1_2, Chartist.getMultiValue(data.value) / _.max(data.series))}"
-			# Animate point 			
-			data.element.animate
-				opacity: 
-					dur: 250
-					begin: 800
-					from: 0
-					to: 1
-					easing: Chartist.Svg.Easing.easeOutQuint
-		 					 			
-		if data.type is 'line'
-			# create bounding box for gradient color
-			data.element.attr
-				x1: data.x1 + 0.001
-			# Animate line
-			data.element.animate 
-				d: 
-					dur: 1000
-					from: if lastPath is undefined then data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify() else lastPath
-					to: data.path.clone().stringify()
-					easing: Chartist.Svg.Easing.easeOutQuint
-			# Save previous line path  			
-			if init is true
-				lastPath = data.path.clone().stringify()
-				init = false		
+		defGradient ctx, 'gradient1', GRADIENT_COLOR1_1, GRADIENT_COLOR1_2
 	
+	trendChart3.on 'draw', (data)->
+		datajudge = ->
+			if data.type is 'label' and data.axis is 'y' or data.type is 'grid'
+				data.element.animate
+					opacity:
+						dur: 500
+						from: 0
+						to: 1
+						easing: Chartist.Svg.Easing.easeOut
+	
+			if data.type is 'point'
+				# Dynamic color point 				
+				data.element.attr 
+					style: "stroke: #{Color.mix(GRADIENT_COLOR1_1, GRADIENT_COLOR1_2, Chartist.getMultiValue(data.value) / _.max(data.series))}"
+				# Animate point 			
+				data.element.animate
+					opacity: 
+						dur: 250
+						begin: 800
+						from: 0
+						to: 1
+						easing: Chartist.Svg.Easing.easeOutQuint
+			 					 			
+			if data.type is 'line'
+				# create bounding box for gradient color
+				data.element.attr
+					x1: data.x1 + 0.001
+				# Animate line
+				data.element.animate 
+					d: 
+						dur: 1000
+						from: if lastPath is undefined then data.path.clone().scale(1, 0).translate(0, data.chartRect.height()).stringify() else lastPath
+						to: data.path.clone().stringify()
+						easing: Chartist.Svg.Easing.easeOutQuint
+				# Save previous line path  			
+				if init is true
+					lastPath = data.path.clone().stringify()
+					init = false
+		datajudge()		
 
+)
+
+
+
+DynamicLoader.series(CHARTIST).then(->
+# 	print 1
+	init = true
+	lastPath = undefined					
 )
 

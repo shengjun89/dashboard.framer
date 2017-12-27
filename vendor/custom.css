@@ -1,0 +1,51 @@
+/*line chart*/
+#trend .ct-line,#trend1 .ct-line,#trend2 .ct-line,#trend3 .ct-line,#trend4 .ct-line,#trend5 .ct-line,#trend6 .ct-line{
+	stroke: url(#gradient1);
+	stroke-width: 6px;
+	stroke-linecap: round;
+}
+#trend .ct-point,#trend1 .ct-point,#trend2 .ct-point,#trend3 .ct-point,#trend4 .ct-point,#trend5 .ct-point,#trend6 .ct-point{
+	stroke-width: 10px;
+	stroke: rgba(255,255,255,1);
+    /*lineWidth: 2;*/
+}
+#trend .ct-grid,#trend1 .ct-grid,#trend2 .ct-grid,#trend3 .ct-grid,#trend4 .ct-grid,#trend5 .ct-grid,#trend6 .ct-grid{
+	stroke: rgba(158,158,158,1);
+	stroke-dasharray: 4px;
+}
+#trend .ct-vertical,#trend1 .ct-vertical,#trend2 .ct-vertical,#trend3 .ct-vertical,#trend4 .ct-vertical,#trend5 .ct-vertical,#trend6 .ct-vertical,{
+	color: rgba(158,158,158,1);
+	font-size: 1em;
+}
+#trend .ct-horizontal,#trend1 .ct-horizontal,#trend2 .ct-horizontal,#trend3 .ct-horizontal,#trend4 .ct-horizontal,#trend5 .ct-horizontal,#trend6 .ct-horizontal,{
+	transform: translateY(6px);
+	font-size: .8em;
+	color: rgba(158,158,158,1);
+	justify-content: center;
+}
+
+/*pie chart*/
+#return .ct-series-a:not(.ct-fill-donut) .ct-slice-donut{
+	stroke: url(#gradient2);
+}
+
+#churn .ct-series-a:not(.ct-fill-donut) .ct-slice-donut{
+	stroke: url(#gradient3);
+}
+
+
+.pie .ct-series-a .ct-slice-donut{
+	stroke-linecap: round;
+}
+.pie .ct-series-b .ct-slice-donut, .pie .ct-fill-donut .ct-slice-donut{
+	stroke: rgb(46, 59, 71);
+}
+.pie .label{
+	margin: .2em -.2em 0 0;
+	font-size: 3em;
+}
+.pie .label span{
+	margin-left: 4px;
+	font-size: .4em;
+	opacity: .6;
+}
