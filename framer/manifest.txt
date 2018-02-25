@@ -42,10 +42,6 @@ images/08_sel.svg
 images/arrow_down.svg
 images/arrow_up.svg
 images/avatar.png
-images/chart01.svg
-images/chart02.svg
-images/chart03.svg
-images/chart04.svg
 images/client.svg
 images/descend.svg
 images/icon_succ.svg

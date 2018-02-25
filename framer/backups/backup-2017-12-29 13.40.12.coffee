@@ -1156,7 +1156,6 @@ GRADIENT_COLOR2_2 = '#CDC01D'
 GRADIENT_COLOR3_1 = '#B455FF'
 GRADIENT_COLOR3_2 = '#3B6CEE'
 
-
 #line1
 lineOptions1 = 
 	height: "#{uVarry[0].children[1].height*0.9}"

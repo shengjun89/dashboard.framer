@@ -138,7 +138,7 @@ account = new Layer
 	width: 92
 	height: 21
 
-admin = new TextLayer
+admin_24 = new TextLayer
 	parent: account
 	x: 0
 	y: 5.329070518200753e-15
@@ -150,7 +150,6 @@ admin = new TextLayer
 	lineHeight: 1.5
 	textAlign: "left"
 	color: "rgba(102,102,102,1)"
-	backgroundColor: "tranparent"
 
 avatar = new Layer
 	parent: account
@@ -160,10 +159,7 @@ avatar = new Layer
 	width: 20
 	height: 20
 	borderRadius: 10
-	backgroundColor: "tranparent"
 	image: "images/avatar.png"
-
-# avatar.html = '<a href="https://github.com/shengjun89" target="_blank"><img src="images/avatar.png" alt="" /></a>'	
 
 line = new Layer
 	parent: txt
@@ -183,11 +179,9 @@ layer = new TextLayer
 	lineHeight: 1.5
 	textAlign: "left"
 	color: "rgba(102,102,102,1)"
-	
-avatar.on Events.Click, ->
-	window.location = "https://github.com/shengjun89"	
 
 #WEB菜单交互
+
 changetoWeb = ->
 	dataMenu = dataMenuH5
 changetoAPP = ->
@@ -440,13 +434,25 @@ for c in [0..clientCgyArry.unique().length-1]
 
 arrow_down.states = 
 	mouseOver:
-		scale:1.3
+		scale:1.2
+		animationOptions:
+			curve: Bezier.ease
+			time:0.25
 	mouseOut:
-		scale:1	
+		scale:1
+		animationOptions:
+			curve: Bezier.ease
+			time:0.25		
 	onClick:
 		rotation:180
+		animationOptions:
+			curve: Bezier.ease
+			time:0.25
 	onClickBack:		
 		rotation:0
+		animationOptions:
+			curve: Bezier.ease
+			time:0.25
 client.states =
 	mouseOver:
 		backgroundColor: headingColorDark
@@ -458,16 +464,11 @@ client.isOn = false
 #平台切换交互
 client.onMouseOver (event, layer) ->
 	@stateSwitch("mouseOver")
-	arrow_down.animate "mouseOver",
-		curve: bigPop
-		time: 0.5
-		
+	arrow_down.stateSwitch("mouseOver")
 client.onMouseOut (event, layer) ->
 	if @isOn is true then @stateSwitch("mouseOver")	
 	else @stateSwitch("mouseOut")	
-	arrow_down.animate "mouseOut",
-		curve: bigPop
-		time: 0.5
+	arrow_down.stateSwitch("mouseOut")
 
 
 # print clientdataCgy
@@ -477,12 +478,12 @@ client.onClick (event, layer) ->
 	if @isOn is false
 		for i in [0..list_bg.children.length-1]
 			list_bg.children[i].visible = true
-		arrow_down.animate "onClick",curve: quick,time: 0.5 and @isOn = true
+		arrow_down.stateSwitch("onClick") and @isOn = true
 		selectSound.play()
 	else
 		for i in [0..list_bg.children.length-1]
 			list_bg.children[i].visible = false
-		arrow_down.animate "onClickBack",curve: quick,time: 0.5 and @isOn = false
+		arrow_down.stateSwitch("onClickBack") and @isOn = false
 		selectEndSound.play()
 
 #点击子项目替换平台名称
@@ -958,6 +959,7 @@ for i  in [0..OverviewData.length-1]
 		backgroundColor: "transparent"
 		width: 124
 		height: 38
+		originY: 1
 		scale: 0
 		opacity: 0
 	
@@ -983,6 +985,7 @@ for i  in [0..OverviewData.length-1]
 		height: 4
 		backgroundColor: "transparent"
 		image: "images/triangle.svg"
+		rotation: 180
 	
 	tooltip_txt = new TextLayer
 		parent: combinedShape
@@ -1002,10 +1005,16 @@ for i  in [0..OverviewData.length-1]
 	tooltips.states.show =
 		scale:1
 		opacity: 1
+		animationOptions:
+			curve: pop
+			time: 1
 			
 	tooltips.states.hidden =
 		scale:0
-		opacity: 0 
+		opacity: 0
+		animationOptions:
+			curve: pop
+			time: 1  
 	
 	copySQL = new TextLayer
 		parent: view_title
@@ -1026,9 +1035,9 @@ for i  in [0..OverviewData.length-1]
 # 		print @isOn
 		tipSound.play()
 		for i in [0..OverviewData.length-1]
-			tooltipsArry[i].animate "hidden",curve: quick,time: 0.5 and tooltipsArry[i].isOn = false
-		if @isOn is false then @children[0].animate "show",curve: quick,time: 0.5 and @isOn = true
-		else @children[0].animate "hidden",curve: quick,time: 0.5 and @isOn = false	
+			tooltipsArry[i].stateSwitch("hidden") and tooltipsArry[i].isOn = false
+		if @isOn is false then @children[0].stateSwitch("show") and @isOn = true
+		else @children[0].stateSwitch("hidden") and @isOn = false	
 		
 # 	moneyCount(0,totalValueArry[0])
 # 	moneyCount(1,totalValueArry[1])
@@ -1164,12 +1173,12 @@ lineOptions1 =
 	showPoint: true
 	chartPadding:
 		top: 60 
-		left: 0
+		left: 4
 	axisX:
 		showGrid: false
 	axisY:
 		onlyInteger: true
-		offset: 44
+		offset: 20
 		scaleMinSpace: 50
 		labelInterpolationFnc: (value) ->
 			"#{value}"
@@ -1180,12 +1189,12 @@ lineOptions2 =
 	showPoint: true
 	chartPadding:
 		top: 60 
-		left: 0
+		left: 4
 	axisX:
 		showGrid: false
 	axisY:
 		onlyInteger: true
-		offset: 44
+		offset: 20
 		scaleMinSpace: 50
 		labelInterpolationFnc: (value) ->
 			"#{value}"
@@ -1196,15 +1205,15 @@ lineOptions3 =
 	showPoint: true
 	chartPadding:
 		top: 60 
-		left: 0
+		left: 4
 	axisX:
 		showGrid: false
 	axisY:
 		onlyInteger: true
-		offset: 44
+		offset: 20
 		scaleMinSpace: 50
 		labelInterpolationFnc: (value) ->
-			"#{value}%"
+			"#{value}"
 
 lineOptions4 = 
 	height: "#{uVarry[3].children[1].height*0.9}"
@@ -1212,15 +1221,15 @@ lineOptions4 =
 	showPoint: true
 	chartPadding:
 		top: 60 
-		left: 0
+		left: 4
 	axisX:
 		showGrid: false
 	axisY:
 		onlyInteger: true
-		offset: 44
+		offset: 20
 		scaleMinSpace: 50
 		labelInterpolationFnc: (value) ->
-			"#{value}%"
+			"#{value}"
 
 # 	
 #趋势图标容器	

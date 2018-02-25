@@ -1026,9 +1026,9 @@ for i  in [0..OverviewData.length-1]
 # 		print @isOn
 		tipSound.play()
 		for i in [0..OverviewData.length-1]
-			tooltipsArry[i].animate "hidden",curve: quick,time: 0.5 and tooltipsArry[i].isOn = false
-		if @isOn is false then @children[0].animate "show",curve: quick,time: 0.5 and @isOn = true
-		else @children[0].animate "hidden",curve: quick,time: 0.5 and @isOn = false	
+			tooltipsArry[i].stateSwitch "hidden",curve: quick,time: 0.5 and tooltipsArry[i].isOn = false
+		if @isOn is false then @children[0].stateSwitch("show") and @isOn = true
+		else @children[0].stateSwitch("hidden") and @isOn = false	
 		
 # 	moneyCount(0,totalValueArry[0])
 # 	moneyCount(1,totalValueArry[1])

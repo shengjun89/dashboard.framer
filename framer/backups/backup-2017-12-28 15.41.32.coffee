@@ -91,18 +91,8 @@ clientdata = [{cgy:"APP",name:"appitem01"},{cgy:"APP",name:"appitem02"},{cgy:"AP
 #概览页
 OverviewData  = [{cgy:"用户分析",name:"新增用户(登录用户)",yesData:"4937",cp_yesRate:"↓0.21%",chart:"images/chart02.svg";},{cgy:"用户分析",name:"活跃用户(访问用户)",yesData:"9237",cp_yesRate:"↑0.32%",chart:"images/chart01.svg";},{cgy:"转化分析",name:"UV访问率(访问用户)",yesData:"43.1%",cp_yesRate:"↑0.42%",chart:"images/chart03.svg";},{cgy:"转化分析",name:"注册UV总转化率",yesData:"36.1%",cp_yesRate:"0.32%↑",chart:"images/chart04.svg";}]
 
-#概览走势数据
-newDataGroups = []
 
-days = ["12/01","12/02","12/03","12/04","12/05","12/06","12/07","12/08","12/09","12/10","12/11","12/12","12/13","12/14","12/15"] 
-newData1 = ["1256","1650","1988","2445","2566","2790","2664","2812","2913","2873","3160","2905","3045","2912","3123","3212"]
-newData2 = ["2156","3550","5801","4677","3216","4801","3260","5691","5901","4873","6360","8505","9675","8514","6746","9607"]
-newData3 = ["34.1","36.2","38.2","35.1","38.5","37.6","38.6","39.6","38.6","36.2","39.5","40.2","44.6","34.5","40.6","37.6"]
-newData4 = ["24.1","26.2","28.2","25.1","30.5","28.6","31.6","32.6","28.6","26.2","29.5","30.2","24.6","31.5","30.6","37.6"]
-
-newDataGroups.push(newData1,newData2,newData3,newData4)
-TrendChartGroup = []
-
+# dataMenu.destroy()
 			
 #顶部导航
 topBar = new Layer
@@ -138,7 +128,7 @@ account = new Layer
 	width: 92
 	height: 21
 
-admin = new TextLayer
+admin_24 = new TextLayer
 	parent: account
 	x: 0
 	y: 5.329070518200753e-15
@@ -150,7 +140,6 @@ admin = new TextLayer
 	lineHeight: 1.5
 	textAlign: "left"
 	color: "rgba(102,102,102,1)"
-	backgroundColor: "tranparent"
 
 avatar = new Layer
 	parent: account
@@ -160,10 +149,7 @@ avatar = new Layer
 	width: 20
 	height: 20
 	borderRadius: 10
-	backgroundColor: "tranparent"
 	image: "images/avatar.png"
-
-# avatar.html = '<a href="https://github.com/shengjun89" target="_blank"><img src="images/avatar.png" alt="" /></a>'	
 
 line = new Layer
 	parent: txt
@@ -183,11 +169,9 @@ layer = new TextLayer
 	lineHeight: 1.5
 	textAlign: "left"
 	color: "rgba(102,102,102,1)"
-	
-avatar.on Events.Click, ->
-	window.location = "https://github.com/shengjun89"	
 
 #WEB菜单交互
+
 changetoWeb = ->
 	dataMenu = dataMenuH5
 changetoAPP = ->
@@ -440,13 +424,25 @@ for c in [0..clientCgyArry.unique().length-1]
 
 arrow_down.states = 
 	mouseOver:
-		scale:1.3
+		scale:1.2
+		animationOptions:
+			curve: Bezier.ease
+			time:0.25
 	mouseOut:
-		scale:1	
+		scale:1
+		animationOptions:
+			curve: Bezier.ease
+			time:0.25		
 	onClick:
 		rotation:180
+		animationOptions:
+			curve: Bezier.ease
+			time:0.25
 	onClickBack:		
 		rotation:0
+		animationOptions:
+			curve: Bezier.ease
+			time:0.25
 client.states =
 	mouseOver:
 		backgroundColor: headingColorDark
@@ -458,16 +454,11 @@ client.isOn = false
 #平台切换交互
 client.onMouseOver (event, layer) ->
 	@stateSwitch("mouseOver")
-	arrow_down.animate "mouseOver",
-		curve: bigPop
-		time: 0.5
-		
+	arrow_down.stateSwitch("mouseOver")
 client.onMouseOut (event, layer) ->
 	if @isOn is true then @stateSwitch("mouseOver")	
 	else @stateSwitch("mouseOut")	
-	arrow_down.animate "mouseOut",
-		curve: bigPop
-		time: 0.5
+	arrow_down.stateSwitch("mouseOut")
 
 
 # print clientdataCgy
@@ -477,12 +468,12 @@ client.onClick (event, layer) ->
 	if @isOn is false
 		for i in [0..list_bg.children.length-1]
 			list_bg.children[i].visible = true
-		arrow_down.animate "onClick",curve: quick,time: 0.5 and @isOn = true
+		arrow_down.stateSwitch("onClick") and @isOn = true
 		selectSound.play()
 	else
 		for i in [0..list_bg.children.length-1]
 			list_bg.children[i].visible = false
-		arrow_down.animate "onClickBack",curve: quick,time: 0.5 and @isOn = false
+		arrow_down.stateSwitch("onClickBack") and @isOn = false
 		selectEndSound.play()
 
 #点击子项目替换平台名称
@@ -831,18 +822,22 @@ for i  in [0..OverviewData.length-1]
 		height: uV.height*0.8
 		backgroundColor: "transparent"
 		clip: true
-	
-# 	Utils.labelLayer(viewChart, "Loading...")
-# 	viewChart.style = "font-size": "1em"
 		
-# 	loadingImg = new Layer
-# 		parent: viewChart
-# 		width: 56
-# 		height: 56
-# 		x: Align.center
-# 		y: Align.center()
-# 		z: 1
-# 		image:"images/loading.gif"	
+	loadingImg = new Layer
+		parent: viewChart
+		width: 56
+		height: 56
+		x: Align.center
+		y: Align.center()
+		z: 1
+		image:"images/loading.gif"	
+	
+# 	loadHidden = ->	
+# 		loadingImg.animate
+# 			opacity: 0
+# 			options:
+# 				time: 0.3
+# 				curve: Bezier.ease
 					
 	totalDataGroup = new Layer
 		parent: uV
@@ -958,6 +953,7 @@ for i  in [0..OverviewData.length-1]
 		backgroundColor: "transparent"
 		width: 124
 		height: 38
+		originY: 1
 		scale: 0
 		opacity: 0
 	
@@ -983,6 +979,7 @@ for i  in [0..OverviewData.length-1]
 		height: 4
 		backgroundColor: "transparent"
 		image: "images/triangle.svg"
+		rotation: 180
 	
 	tooltip_txt = new TextLayer
 		parent: combinedShape
@@ -1002,10 +999,16 @@ for i  in [0..OverviewData.length-1]
 	tooltips.states.show =
 		scale:1
 		opacity: 1
+		animationOptions:
+			curve: pop
+			time: 1
 			
 	tooltips.states.hidden =
 		scale:0
-		opacity: 0 
+		opacity: 0
+		animationOptions:
+			curve: pop
+			time: 1  
 	
 	copySQL = new TextLayer
 		parent: view_title
@@ -1026,9 +1029,9 @@ for i  in [0..OverviewData.length-1]
 # 		print @isOn
 		tipSound.play()
 		for i in [0..OverviewData.length-1]
-			tooltipsArry[i].animate "hidden",curve: quick,time: 0.5 and tooltipsArry[i].isOn = false
-		if @isOn is false then @children[0].animate "show",curve: quick,time: 0.5 and @isOn = true
-		else @children[0].animate "hidden",curve: quick,time: 0.5 and @isOn = false	
+			tooltipsArry[i].stateSwitch("hidden") and tooltipsArry[i].isOn = false
+		if @isOn is false then @children[0].stateSwitch("show") and @isOn = true
+		else @children[0].stateSwitch("hidden") and @isOn = false	
 		
 # 	moneyCount(0,totalValueArry[0])
 # 	moneyCount(1,totalValueArry[1])
@@ -1156,6 +1159,18 @@ GRADIENT_COLOR2_2 = '#CDC01D'
 GRADIENT_COLOR3_1 = '#B455FF'
 GRADIENT_COLOR3_2 = '#3B6CEE'
 
+newDataGroups = []
+
+days = ["12/01","12/02","12/03","12/04","12/05","12/06","12/07","12/08","12/09","12/10","12/11","12/12","12/13","12/14","12/15"] 
+newData1 = ["1256","1650","1988","2445","2566","2790","2664","2812","2913","2873","3160","2905","3045","2912","3123","3212"]
+newData2 = ["2156","3550","5801","4677","3216","4801","3260","5691","5901","4873","6360","8505","9675","8514","6746","9607"]
+newData3 = ["34.1","36.2","38.2","35.1","38.5","37.6","38.6","39.6","38.6","36.2","39.5","40.2","44.6","34.5","40.6","37.6"]
+newData4 = ["24.1","26.2","28.2","25.1","30.5","28.6","31.6","32.6","28.6","26.2","29.5","30.2","24.6","31.5","30.6","37.6"]
+
+newDataGroups.push(newData1,newData2,newData3,newData4)
+TrendChartGroup = []
+
+
 
 #line1
 lineOptions1 = 
@@ -1164,12 +1179,12 @@ lineOptions1 =
 	showPoint: true
 	chartPadding:
 		top: 60 
-		left: 0
+		left: 16
 	axisX:
 		showGrid: false
 	axisY:
 		onlyInteger: true
-		offset: 44
+		offset: 20
 		scaleMinSpace: 50
 		labelInterpolationFnc: (value) ->
 			"#{value}"
@@ -1180,12 +1195,12 @@ lineOptions2 =
 	showPoint: true
 	chartPadding:
 		top: 60 
-		left: 0
+		left: 16
 	axisX:
 		showGrid: false
 	axisY:
 		onlyInteger: true
-		offset: 44
+		offset: 20
 		scaleMinSpace: 50
 		labelInterpolationFnc: (value) ->
 			"#{value}"
@@ -1196,15 +1211,15 @@ lineOptions3 =
 	showPoint: true
 	chartPadding:
 		top: 60 
-		left: 0
+		left: 12
 	axisX:
 		showGrid: false
 	axisY:
 		onlyInteger: true
-		offset: 44
+		offset: 20
 		scaleMinSpace: 50
 		labelInterpolationFnc: (value) ->
-			"#{value}%"
+			"#{value}"
 
 lineOptions4 = 
 	height: "#{uVarry[3].children[1].height*0.9}"
@@ -1212,15 +1227,15 @@ lineOptions4 =
 	showPoint: true
 	chartPadding:
 		top: 60 
-		left: 0
+		left: 12
 	axisX:
 		showGrid: false
 	axisY:
 		onlyInteger: true
-		offset: 44
+		offset: 20
 		scaleMinSpace: 50
 		labelInterpolationFnc: (value) ->
-			"#{value}%"
+			"#{value}"
 
 # 	
 #趋势图标容器	
@@ -1253,8 +1268,8 @@ TrendChartPlaceholder4 = new Layer
 	y: 32			
 # TrendChartGroup.push()
 #添加标签文字loading
-Utils.labelLayer(TrendChartPlaceholder1, "Loading...")
-TrendChartPlaceholder1.style = "font-size": "1em"
+# Utils.labelLayer(TrendChartPlaceholder1, "Loading...")
+# TrendChartPlaceholder1.style = "font-size": "1em"
 
 
 defGradient = (ctx, name, startColor, endColor)->
@@ -1399,6 +1414,12 @@ DynamicLoader.series(CHARTIST).then(->
 			.attr 'transform':"translate( #{ctx.axisX.stepLength/2} )"
 		defGradient ctx, 'gradient1', GRADIENT_COLOR1_1, GRADIENT_COLOR1_2 			
 	trendChart3.on 'draw', (data)->
+# 		uVarry[2].children[1].children[0].animate
+# 			opacity: 0
+# 			options:
+# 				time: 0.3
+# 				curve: Bezier.ease
+		
 		if data.type is 'label' and data.axis is 'y' or data.type is 'grid'
 			data.element.animate
 				opacity:

@@ -1002,10 +1002,16 @@ for i  in [0..OverviewData.length-1]
 	tooltips.states.show =
 		scale:1
 		opacity: 1
+		animationOptions:
+			curve: pop
+			time: 1
 			
 	tooltips.states.hidden =
 		scale:0
-		opacity: 0 
+		opacity: 0
+		animationOptions:
+			curve: pop
+			time: 1  
 	
 	copySQL = new TextLayer
 		parent: view_title
@@ -1026,9 +1032,9 @@ for i  in [0..OverviewData.length-1]
 # 		print @isOn
 		tipSound.play()
 		for i in [0..OverviewData.length-1]
-			tooltipsArry[i].animate "hidden",curve: quick,time: 0.5 and tooltipsArry[i].isOn = false
-		if @isOn is false then @children[0].animate "show",curve: quick,time: 0.5 and @isOn = true
-		else @children[0].animate "hidden",curve: quick,time: 0.5 and @isOn = false	
+			tooltipsArry[i].stateSwitch("hidden") and tooltipsArry[i].isOn = false
+		if @isOn is false then @children[0].stateSwitch("show") and @isOn = true
+		else @children[0].stateSwitch("hidden") and @isOn = false	
 		
 # 	moneyCount(0,totalValueArry[0])
 # 	moneyCount(1,totalValueArry[1])

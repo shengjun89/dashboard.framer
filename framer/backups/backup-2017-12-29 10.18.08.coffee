@@ -440,13 +440,25 @@ for c in [0..clientCgyArry.unique().length-1]
 
 arrow_down.states = 
 	mouseOver:
-		scale:1.3
+		scale:1.2
+		animationOptions:
+			curve: Bezier.ease
+			time:0.25
 	mouseOut:
-		scale:1	
+		scale:1
+		animationOptions:
+			curve: Bezier.ease
+			time:0.25		
 	onClick:
 		rotation:180
+		animationOptions:
+			curve: Bezier.ease
+			time:0.25
 	onClickBack:		
 		rotation:0
+		animationOptions:
+			curve: Bezier.ease
+			time:0.25
 client.states =
 	mouseOver:
 		backgroundColor: headingColorDark
@@ -458,16 +470,11 @@ client.isOn = false
 #平台切换交互
 client.onMouseOver (event, layer) ->
 	@stateSwitch("mouseOver")
-	arrow_down.animate "mouseOver",
-		curve: bigPop
-		time: 0.5
-		
+	arrow_down.stateSwitch("mouseOver")
 client.onMouseOut (event, layer) ->
 	if @isOn is true then @stateSwitch("mouseOver")	
 	else @stateSwitch("mouseOut")	
-	arrow_down.animate "mouseOut",
-		curve: bigPop
-		time: 0.5
+	arrow_down.stateSwitch("mouseOut")
 
 
 # print clientdataCgy
@@ -477,12 +484,12 @@ client.onClick (event, layer) ->
 	if @isOn is false
 		for i in [0..list_bg.children.length-1]
 			list_bg.children[i].visible = true
-		arrow_down.animate "onClick",curve: quick,time: 0.5 and @isOn = true
+		arrow_down.stateSwitch("onClick") and @isOn = true
 		selectSound.play()
 	else
 		for i in [0..list_bg.children.length-1]
 			list_bg.children[i].visible = false
-		arrow_down.animate "onClickBack",curve: quick,time: 0.5 and @isOn = false
+		arrow_down.stateSwitch("onClickBack") and @isOn = false
 		selectEndSound.play()
 
 #点击子项目替换平台名称
@@ -1002,10 +1009,16 @@ for i  in [0..OverviewData.length-1]
 	tooltips.states.show =
 		scale:1
 		opacity: 1
+		animationOptions:
+			curve: pop
+			time: 1
 			
 	tooltips.states.hidden =
 		scale:0
-		opacity: 0 
+		opacity: 0
+		animationOptions:
+			curve: pop
+			time: 1  
 	
 	copySQL = new TextLayer
 		parent: view_title
@@ -1026,9 +1039,9 @@ for i  in [0..OverviewData.length-1]
 # 		print @isOn
 		tipSound.play()
 		for i in [0..OverviewData.length-1]
-			tooltipsArry[i].animate "hidden",curve: quick,time: 0.5 and tooltipsArry[i].isOn = false
-		if @isOn is false then @children[0].animate "show",curve: quick,time: 0.5 and @isOn = true
-		else @children[0].animate "hidden",curve: quick,time: 0.5 and @isOn = false	
+			tooltipsArry[i].stateSwitch("hidden") and tooltipsArry[i].isOn = false
+		if @isOn is false then @children[0].stateSwitch("show") and @isOn = true
+		else @children[0].stateSwitch("hidden") and @isOn = false	
 		
 # 	moneyCount(0,totalValueArry[0])
 # 	moneyCount(1,totalValueArry[1])
